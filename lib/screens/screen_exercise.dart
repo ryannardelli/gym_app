@@ -32,7 +32,22 @@ class ScreenExercise extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColors.primary,
       appBar: AppBar(
-        title: Text("${exerciseModel.name} - ${exerciseModel.training}"),
+        title: Column(
+          children: [
+            Text(
+              exerciseModel.name,
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
+            ),
+            Text(exerciseModel.training, style: TextStyle(fontSize: 15)),
+          ],
+        ),
+        centerTitle: true,
+        backgroundColor: AppColors.assets,
+        elevation: 0,
+        toolbarHeight: 72,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.vertical(bottom: Radius.circular(32)),
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
@@ -66,7 +81,14 @@ class ScreenExercise extends StatelessWidget {
                     onPressed: () {},
                     child: Text("Enviar foto"),
                   ),
-                  ElevatedButton(onPressed: () {}, child: Text("Tirar foto")),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: AppColors.secondary,
+                      foregroundColor: Colors.white,
+                    ),
+                    onPressed: () {},
+                    child: Text("Tirar foto"),
+                  ),
                 ],
               ),
             ),

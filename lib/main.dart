@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gym_app/screens/screen_exercise.dart';
+import 'package:flutter_gym_app/screens/screen_authentication.dart';
+// import 'package:flutter_gym_app/screens/screen_exercise.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: ScreenExercise(),
+      home: ScreenAuthentication(),
     );
   }
 }
