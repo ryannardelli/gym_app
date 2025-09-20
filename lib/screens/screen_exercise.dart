@@ -1,30 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gym_app/models/exercise_model.dart';
 import 'package:flutter_gym_app/models/feeling_model.dart';
-
 import 'package:flutter_gym_app/app_colors.dart';
 
 class ScreenExercise extends StatelessWidget {
   ScreenExercise({super.key});
 
   final exerciseModel = ExerciseModel(
-    id: "EX001",
-    name: "Remada baixa supinada",
-    training: "Treino A",
-    howMake: "Segura a barra e puxa",
+    id: "EX002",
+    name: "Supino reto",
+    training: "Treino B",
+    howMake:
+        "Deite no banco, segure a barra e empurre para cima controladamente.",
   );
 
   final List<FeelingModel> listFeeling = [
-    FeelingModel(
-      id: "SE001",
-      feeling: "Pouca ativação hoje",
-      date: "2025-09-18",
-    ),
-    FeelingModel(
-      id: "SE002",
-      feeling: "Já senti alguma ativação",
-      date: "2025-09-19",
-    ),
+    FeelingModel(id: "SE003", feeling: "Pouca força hoje", date: "2025-09-20"),
+    FeelingModel(id: "SE004", feeling: "Me senti bem", date: "2025-09-21"),
   ];
 
   @override
@@ -36,27 +28,27 @@ class ScreenExercise extends StatelessWidget {
           children: [
             Text(
               exerciseModel.name,
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
+              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
             ),
-            Text(exerciseModel.training, style: TextStyle(fontSize: 15)),
+            Text(exerciseModel.training, style: const TextStyle(fontSize: 15)),
           ],
         ),
         centerTitle: true,
         backgroundColor: AppColors.assets,
         elevation: 0,
         toolbarHeight: 72,
-        shape: RoundedRectangleBorder(
+        shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.vertical(bottom: Radius.circular(32)),
         ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          print("Foi clicado!");
+          print("Adicionar nova sensação");
         },
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
       ),
       body: Container(
-        margin: EdgeInsets.all(8),
+        margin: const EdgeInsets.all(8),
         padding: const EdgeInsets.all(16.0),
         decoration: BoxDecoration(
           color: Colors.white,
@@ -64,46 +56,77 @@ class ScreenExercise extends StatelessWidget {
         ),
         child: ListView(
           children: [
-            SizedBox(
-              width: double.infinity,
-              height: 250,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: AppColors.primary,
-                      foregroundColor: Colors.white,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadiusGeometry.circular(16),
-                      ),
-                    ),
-                    onPressed: () {},
-                    child: Text("Enviar foto"),
-                  ),
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: AppColors.secondary,
-                      foregroundColor: Colors.white,
-                    ),
-                    onPressed: () {},
-                    child: Text("Tirar foto"),
-                  ),
-                ],
+            // Imagem / vídeo do exercício
+            Container(
+              height: 200,
+              decoration: BoxDecoration(
+                color: AppColors.secondary.withOpacity(0.2),
+                borderRadius: BorderRadius.circular(16),
+              ),
+              child: const Center(
+                child: Icon(
+                  Icons.play_circle_fill,
+                  size: 64,
+                  color: Colors.grey,
+                ),
               ),
             ),
-            const SizedBox(height: 8),
-            Text(
+            const SizedBox(height: 16),
+
+            // Como fazer
+            const Text(
               "Como fazer?",
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
             ),
             const SizedBox(height: 8),
             Text(exerciseModel.howMake),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: const Divider(color: AppColors.secondary),
+
+            const SizedBox(height: 16),
+            const Divider(color: AppColors.secondary),
+
+            // Registro de Séries / Repetições / Carga
+            const Text(
+              "Registro do exercício",
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
             ),
-            Text(
+            const SizedBox(height: 8),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Expanded(
+                  child: TextFormField(
+                    decoration: const InputDecoration(
+                      labelText: "Séries",
+                      border: OutlineInputBorder(),
+                    ),
+                  ),
+                ),
+                const SizedBox(width: 8),
+                Expanded(
+                  child: TextFormField(
+                    decoration: const InputDecoration(
+                      labelText: "Repetições",
+                      border: OutlineInputBorder(),
+                    ),
+                  ),
+                ),
+                const SizedBox(width: 8),
+                Expanded(
+                  child: TextFormField(
+                    decoration: const InputDecoration(
+                      labelText: "Carga (kg)",
+                      border: OutlineInputBorder(),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+
+            const SizedBox(height: 16),
+            const Divider(color: AppColors.secondary),
+
+            // Como estou me sentindo
+            const Text(
               "Como estou me sentindo?",
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
             ),
