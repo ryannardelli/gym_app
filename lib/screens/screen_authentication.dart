@@ -11,6 +11,13 @@ class ScreenAuthentication extends StatefulWidget {
 
 class _ScreenAuthenticationState extends State<ScreenAuthentication> {
   bool isAuth = true;
+  final _formKey = GlobalKey<FormState>();
+
+  // Controllers para pegar os valores
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+  final TextEditingController confirmPasswordController =
+      TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -30,92 +37,149 @@ class _ScreenAuthenticationState extends State<ScreenAuthentication> {
           ),
 
           // Conteúdo principal
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Form(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  // Logo
-                  Image.asset("assets/logo-app.png", height: 250),
+          SingleChildScrollView(
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Form(
+                key: _formKey,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    const SizedBox(height: 50),
+                    // Logo
+                    Image.asset("assets/logo-app.png", height: 250),
 
-                  // Slogan
-                  const Text(
-                    "Transforme seu treino, transforme você",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w500,
-                      color: Colors.white70,
+                    // Slogan
+                    const Text(
+                      "Transforme seu treino, transforme você",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.white70,
+                      ),
                     ),
-                  ),
 
-                  const SizedBox(height: 32),
+                    const SizedBox(height: 32),
 
-                  // Campo e-mail
-                  TextFormField(decoration: getAuthInputDecoration("E-mail:")),
+                    // Campo e-mail
+                    TextFormField(
+                      controller: emailController,
+                      decoration: getAuthInputDecoration("E-mail:"),
+                      validator: (String? value) {
+                        if (value == null || value.isEmpty) {
+                          return "O e-mail não pode ficar vazio.";
+                        }
+                        if (value.length < 5) {
+                          return "O e-mail é muito curto.";
+                        }
+                        if (!value.contains("@")) {
+                          return "O e-mail não é válido.";
+                        }
+                        return null;
+                      },
+                    ),
 
-                  SizedBox(height: 20),
+                    const SizedBox(height: 20),
 
-                  // Campo senha
-                  TextFormField(decoration: getAuthInputDecoration("Senha:")),
+                    // Campo senha
+                    TextFormField(
+                      controller: passwordController,
+                      obscureText: true,
+                      decoration: getAuthInputDecoration("Senha:"),
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return "A senha não pode ficar vazia.";
+                        }
+                        if (value.length < 6) {
+                          return "A senha deve ter ao menos 6 caracteres.";
+                        }
+                        return null;
+                      },
+                    ),
 
-                  // Campos extras para cadastro
-                  Visibility(
-                    visible: !isAuth,
-                    child: Column(
-                      children: [
-                        SizedBox(height: 20),
-                        TextFormField(
-                          decoration: getAuthInputDecoration(
-                            "Confirme a senha:",
+                    // Campos extras para cadastro
+                    Visibility(
+                      visible: !isAuth,
+                      child: Column(
+                        children: [
+                          const SizedBox(height: 20),
+                          TextFormField(
+                            controller: confirmPasswordController,
+                            obscureText: true,
+                            decoration: getAuthInputDecoration(
+                              "Confirme a senha:",
+                            ),
+                            validator: (value) {
+                              if (!isAuth) {
+                                if (value == null || value.isEmpty) {
+                                  return "A confirmação de senha não pode ficar vazia.";
+                                }
+                                if (value != passwordController.text) {
+                                  return "As senhas não conferem.";
+                                }
+                              }
+                              return null;
+                            },
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
-                  ),
 
-                  const SizedBox(height: 16),
+                    const SizedBox(height: 16),
 
-                  // Botão principal (entrar/cadastrar)
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.black,
-                      foregroundColor: Colors.white,
+                    // Botão principal (entrar/cadastrar)
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.black,
+                        foregroundColor: Colors.white,
+                      ),
+                      onPressed: handleMainButton,
+                      child: Text(isAuth ? "Entrar" : "Cadastrar"),
                     ),
-                    onPressed: () {
-                      if (isAuth) {
-                        // lógica de login
-                      } else {
-                        // lógica de cadastro
-                      }
-                    },
-                    child: Text(isAuth ? "Entrar" : "Cadastrar"),
-                  ),
 
-                  const Divider(),
+                    const Divider(color: Colors.white70),
 
-                  // Botão de alternância login/cadastro
-                  TextButton(
-                    onPressed: () {
-                      setState(() {
-                        isAuth = !isAuth;
-                      });
-                    },
-                    child: Text(
-                      isAuth
-                          ? "Ainda não tem uma conta? Cadastre-se"
-                          : "Já tem uma conta? Entrar",
-                      style: const TextStyle(color: Colors.white),
+                    // Botão de alternância login/cadastro
+                    TextButton(
+                      onPressed: () {
+                        setState(() {
+                          isAuth = !isAuth;
+                        });
+                      },
+                      child: Text(
+                        isAuth
+                            ? "Ainda não tem uma conta? Cadastre-se"
+                            : "Já tem uma conta? Entrar",
+                        style: const TextStyle(color: Colors.white),
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ),
         ],
       ),
     );
+  }
+
+  // Função que valida o formulário
+  void handleMainButton() {
+    if (_formKey.currentState!.validate()) {
+      print("Formulário válido.");
+      // Aqui você coloca a lógica de login ou cadastro
+    } else {
+      print("Formulário inválido.");
+    }
+  }
+
+  @override
+  void dispose() {
+    emailController.dispose();
+    passwordController.dispose();
+    confirmPasswordController.dispose();
+    super.dispose();
   }
 }
