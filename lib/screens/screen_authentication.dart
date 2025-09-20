@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gym_app/app_colors.dart';
 import 'package:flutter_gym_app/components/decoration_field_auth.dart';
+import 'package:flutter_gym_app/screens/screen_home.dart';
 
 class ScreenAuthentication extends StatefulWidget {
   const ScreenAuthentication({super.key});
@@ -166,10 +167,24 @@ class _ScreenAuthenticationState extends State<ScreenAuthentication> {
   }
 
   // Função que valida o formulário
+  // void handleMainButton() {
+  //   if (_formKey.currentState!.validate()) {
+  //     print("Formulário válido.");
+  //     // Aqui você coloca a lógica de login ou cadastro
+  //   } else {
+  //     print("Formulário inválido.");
+  //   }
+  // }
+
   void handleMainButton() {
     if (_formKey.currentState!.validate()) {
       print("Formulário válido.");
-      // Aqui você coloca a lógica de login ou cadastro
+
+      // MOCK: aceitar qualquer email e senha
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => const ScreenHome()),
+      );
     } else {
       print("Formulário inválido.");
     }
