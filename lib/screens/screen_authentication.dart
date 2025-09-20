@@ -9,19 +9,32 @@ class ScreenAuthentication extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.assets,
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.stretch,
+      body: Stack(
         children: [
-          Image.asset("assets/logo-app.png", height: 250),
-          Text(
-            "Transforme seu treino, transforme você",
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontSize: 20, // mais discreto
-              fontWeight: FontWeight.w500, // médio ou normal
-              color: Colors.white70, // ou uma cor levemente mais clara
+          Container(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [AppColors.primary, AppColors.assets],
+              ),
             ),
+          ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Image.asset("assets/logo-app.png", height: 250),
+              Text(
+                "Transforme seu treino, transforme você",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.w500,
+                  color: Colors.white70,
+                ),
+              ),
+            ],
           ),
         ],
       ),
