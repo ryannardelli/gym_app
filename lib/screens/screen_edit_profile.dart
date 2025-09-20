@@ -37,7 +37,7 @@ class _ScreenEditProfileState extends State<ScreenEditProfile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: const Color(0xFFF5F5F5),
       appBar: AppBar(
         title: const Text("Editar Perfil"),
         centerTitle: true,
@@ -53,7 +53,8 @@ class _ScreenEditProfileState extends State<ScreenEditProfile> {
               TextFormField(
                 controller: nameController,
                 decoration: const InputDecoration(
-                  labelText: "Nome",
+                  hintText: "Nome",
+                  fillColor: Colors.white,
                   border: OutlineInputBorder(),
                 ),
                 validator: (value) {
@@ -69,7 +70,8 @@ class _ScreenEditProfileState extends State<ScreenEditProfile> {
               TextFormField(
                 controller: emailController,
                 decoration: const InputDecoration(
-                  labelText: "Email",
+                  fillColor: Colors.white,
+                  hintText: "Email",
                   border: OutlineInputBorder(),
                 ),
                 validator: (value) {
@@ -88,7 +90,8 @@ class _ScreenEditProfileState extends State<ScreenEditProfile> {
               TextFormField(
                 controller: ageController,
                 decoration: const InputDecoration(
-                  labelText: "Idade",
+                  fillColor: Colors.white,
+                  hintText: "Idade",
                   border: OutlineInputBorder(),
                 ),
                 keyboardType: TextInputType.number,

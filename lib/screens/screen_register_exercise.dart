@@ -11,7 +11,7 @@ class ScreenRegisterExercise extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: const Color(0xFFF5F5F5),
       appBar: AppBar(
         title: const Text("Cadastrar Exercício"),
         centerTitle: true,
@@ -24,7 +24,8 @@ class ScreenRegisterExercise extends StatelessWidget {
             TextField(
               controller: nameController,
               decoration: const InputDecoration(
-                labelText: "Nome do exercício",
+                fillColor: Colors.white,
+                hintText: "Nome do exercício",
                 border: OutlineInputBorder(),
               ),
             ),
@@ -32,7 +33,8 @@ class ScreenRegisterExercise extends StatelessWidget {
             TextField(
               controller: trainingController,
               decoration: const InputDecoration(
-                labelText: "Treino",
+                fillColor: Colors.white,
+                hintText: "Treino",
                 border: OutlineInputBorder(),
               ),
             ),
@@ -40,7 +42,8 @@ class ScreenRegisterExercise extends StatelessWidget {
             TextField(
               controller: howMakeController,
               decoration: const InputDecoration(
-                labelText: "Como fazer",
+                fillColor: Colors.white,
+                hintText: "Como fazer",
                 border: OutlineInputBorder(),
               ),
               maxLines: 3,

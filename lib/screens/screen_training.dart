@@ -36,16 +36,16 @@ class ScreenTraining extends StatelessWidget {
           children: [
             Text(
               exerciseModel.name,
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
+              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
             ),
-            Text(exerciseModel.training, style: TextStyle(fontSize: 15)),
+            Text(exerciseModel.training, style: const TextStyle(fontSize: 15)),
           ],
         ),
         centerTitle: true,
         backgroundColor: AppColors.assets,
         elevation: 0,
         toolbarHeight: 72,
-        shape: RoundedRectangleBorder(
+        shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.vertical(bottom: Radius.circular(32)),
         ),
       ),
@@ -59,7 +59,7 @@ class ScreenTraining extends StatelessWidget {
         child: const Icon(Icons.add),
       ),
       body: Container(
-        margin: EdgeInsets.all(8),
+        margin: const EdgeInsets.all(8),
         padding: const EdgeInsets.all(16.0),
         decoration: BoxDecoration(
           color: Colors.white,
@@ -73,40 +73,70 @@ class ScreenTraining extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  ElevatedButton(
+                  // Botão Enviar foto
+                  ElevatedButton.icon(
                     style: ElevatedButton.styleFrom(
                       backgroundColor: AppColors.primary,
                       foregroundColor: Colors.white,
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(16),
+                        borderRadius: BorderRadius.circular(20),
                       ),
+                      padding: const EdgeInsets.symmetric(
+                        vertical: 16,
+                        horizontal: 24,
+                      ),
+                      elevation: 6,
                     ),
                     onPressed: () {},
-                    child: Text("Enviar foto"),
+                    icon: const Icon(Icons.upload_file, size: 28),
+                    label: const Text(
+                      "Enviar Foto",
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
                   ),
-                  ElevatedButton(
+
+                  // Botão Tirar foto
+                  ElevatedButton.icon(
                     style: ElevatedButton.styleFrom(
                       backgroundColor: AppColors.secondary,
                       foregroundColor: Colors.white,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      padding: const EdgeInsets.symmetric(
+                        vertical: 16,
+                        horizontal: 24,
+                      ),
+                      elevation: 6,
                     ),
                     onPressed: () {},
-                    child: Text("Tirar foto"),
+                    icon: const Icon(Icons.camera_alt, size: 28),
+                    label: const Text(
+                      "Tirar Foto",
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
                   ),
                 ],
               ),
             ),
             const SizedBox(height: 8),
-            Text(
+            const Text(
               "Como fazer?",
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
             ),
             const SizedBox(height: 8),
             Text(exerciseModel.howMake),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: const Divider(color: AppColors.secondary),
+            const Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Divider(color: AppColors.secondary),
             ),
-            Text(
+            const Text(
               "Como estou me sentindo?",
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
             ),

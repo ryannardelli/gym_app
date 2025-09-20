@@ -69,7 +69,7 @@ class _ScreenFeelingsState extends State<ScreenFeelings> {
                 itemBuilder: (context, index) {
                   final feeling = listFeelings[index];
                   return Card(
-                    color: AppColors.secondary,
+                    color: AppColors.assets,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(16),
                     ),
@@ -137,7 +137,8 @@ class _ScreenAddFeelingState extends State<ScreenAddFeeling> {
             TextField(
               controller: feelingController,
               decoration: const InputDecoration(
-                labelText: "Sentimento",
+                hintText: "Sentimento",
+                fillColor: Colors.white,
                 border: OutlineInputBorder(),
               ),
             ),
@@ -145,8 +146,8 @@ class _ScreenAddFeelingState extends State<ScreenAddFeeling> {
             TextField(
               controller: dateController,
               decoration: const InputDecoration(
-                labelText: "Data",
                 border: OutlineInputBorder(),
+                fillColor: Colors.white,
               ),
             ),
             const SizedBox(height: 16),

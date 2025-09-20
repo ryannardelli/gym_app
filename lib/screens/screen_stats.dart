@@ -27,7 +27,7 @@ class ScreenStats extends StatelessWidget {
     ];
 
     return Scaffold(
-      backgroundColor: AppColors.primary,
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: const Text("Estatísticas"),
         centerTitle: true,
@@ -101,7 +101,7 @@ class ScreenStats extends StatelessWidget {
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 18,
-                color: Colors.white,
+                color: Colors.black,
               ),
             ),
             const SizedBox(height: 16),
@@ -123,7 +123,7 @@ class ScreenStats extends StatelessWidget {
                           "Sáb",
                           "Dom",
                         ][index],
-                        style: const TextStyle(color: Colors.white),
+                        style: const TextStyle(color: Colors.black),
                       ),
                       const SizedBox(width: 8),
                       Expanded(
@@ -132,7 +132,7 @@ class ScreenStats extends StatelessWidget {
                             Container(
                               height: 20,
                               decoration: BoxDecoration(
-                                color: Colors.white24,
+                                color: Colors.black,
                                 borderRadius: BorderRadius.circular(8),
                               ),
                             ),

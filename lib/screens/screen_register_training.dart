@@ -13,7 +13,7 @@ class ScreenRegisterTraining extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Cadastrar Treino"),
-        backgroundColor: AppColors.primary,
+        backgroundColor: const Color(0xFFF5F5F5),
         centerTitle: true,
       ),
       body: Padding(
@@ -23,7 +23,8 @@ class ScreenRegisterTraining extends StatelessWidget {
             TextField(
               controller: nameController,
               decoration: const InputDecoration(
-                labelText: "Nome do treino",
+                hintText: "Nome do treino",
+                fillColor: Colors.white,
                 border: OutlineInputBorder(),
               ),
             ),
@@ -31,7 +32,8 @@ class ScreenRegisterTraining extends StatelessWidget {
             TextField(
               controller: trainingController,
               decoration: const InputDecoration(
-                labelText: "Treino",
+                hintText: "Treino",
+                fillColor: Colors.white,
                 border: OutlineInputBorder(),
               ),
             ),
@@ -39,7 +41,8 @@ class ScreenRegisterTraining extends StatelessWidget {
             TextField(
               controller: howMakeController,
               decoration: const InputDecoration(
-                labelText: "Como fazer",
+                hintText: "Como fazer",
+                fillColor: Colors.white,
                 border: OutlineInputBorder(),
               ),
               maxLines: 3,
