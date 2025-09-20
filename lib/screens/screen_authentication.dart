@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gym_app/app_colors.dart';
+import 'package:flutter_gym_app/components/decoration_field_auth.dart';
 
 class ScreenAuthentication extends StatefulWidget {
   const ScreenAuthentication({super.key});
@@ -53,17 +54,12 @@ class _ScreenAuthenticationState extends State<ScreenAuthentication> {
                   const SizedBox(height: 32),
 
                   // Campo e-mail
-                  TextFormField(
-                    decoration: InputDecoration(label: Text("E-mail")),
-                  ),
+                  TextFormField(decoration: getAuthInputDecoration("E-mail:")),
 
                   SizedBox(height: 20),
 
                   // Campo senha
-                  TextFormField(
-                    decoration: InputDecoration(label: Text("Senha")),
-                    obscureText: true,
-                  ),
+                  TextFormField(decoration: getAuthInputDecoration("Senha:")),
 
                   // Campos extras para cadastro
                   Visibility(
@@ -72,10 +68,9 @@ class _ScreenAuthenticationState extends State<ScreenAuthentication> {
                       children: [
                         SizedBox(height: 20),
                         TextFormField(
-                          decoration: InputDecoration(
-                            label: Text("Confirme a senha"),
+                          decoration: getAuthInputDecoration(
+                            "Confirme a senha:",
                           ),
-                          obscureText: true,
                         ),
                       ],
                     ),
@@ -86,8 +81,8 @@ class _ScreenAuthenticationState extends State<ScreenAuthentication> {
                   // Botão principal (entrar/cadastrar)
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.white,
-                      foregroundColor: Colors.black,
+                      backgroundColor: Colors.black,
+                      foregroundColor: Colors.white,
                     ),
                     onPressed: () {
                       if (isAuth) {
