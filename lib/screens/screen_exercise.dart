@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gym_app/models/exercise_model.dart';
 import 'package:flutter_gym_app/models/feeling_model.dart';
 import 'package:flutter_gym_app/app_colors.dart';
+import 'package:flutter_gym_app/screens/screen_register_exercise.dart';
 
 class ScreenExercise extends StatelessWidget {
   ScreenExercise({super.key});
@@ -43,7 +44,10 @@ class ScreenExercise extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          print("Adicionar nova sensação");
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => ScreenRegisterExercise()),
+          );
         },
         child: const Icon(Icons.add),
       ),

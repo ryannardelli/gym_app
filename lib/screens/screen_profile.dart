@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gym_app/app_colors.dart';
+import 'package:flutter_gym_app/screens/screen_edit_profile.dart';
 
 class ScreenProfile extends StatelessWidget {
   const ScreenProfile({super.key});
@@ -75,7 +76,12 @@ class ScreenProfile extends StatelessWidget {
               // Botões de ação
               ElevatedButton.icon(
                 onPressed: () {
-                  print("Editar perfil");
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ScreenEditProfile(),
+                    ),
+                  );
                 },
                 icon: const Icon(Icons.edit),
                 label: const Text("Editar Perfil"),

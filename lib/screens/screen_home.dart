@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gym_app/app_colors.dart';
 import 'package:flutter_gym_app/screens/screen_exercise.dart';
+import 'package:flutter_gym_app/screens/screen_feeling.dart';
 import 'package:flutter_gym_app/screens/screen_profile.dart';
 import 'package:flutter_gym_app/screens/screen_stats.dart';
 import 'package:flutter_gym_app/screens/screen_training.dart'; // Supondo que você já tenha cores definidas
@@ -36,6 +37,13 @@ class ScreenHome extends StatelessWidget {
         "color": Colors.purpleAccent,
         "route": "/stats",
       },
+
+      {
+        "title": "Sentimentos",
+        "icon": Icons.mood, // melhor representação de sentimento
+        "color": Colors.yellow,
+        "route": "/feelings",
+      },
     ];
 
     return Scaffold(
@@ -66,7 +74,7 @@ class ScreenHome extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => ScreeTraining(),
+                          builder: (context) => ScreenTraining(),
                         ),
                       );
 
@@ -90,6 +98,14 @@ class ScreenHome extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => ScreenStats()),
+                      );
+
+                    case "Sentimentos":
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ScreenFeelings(),
+                        ),
                       );
                   }
                 },

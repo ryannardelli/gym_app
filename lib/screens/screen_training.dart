@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gym_app/models/exercise_model.dart';
 import 'package:flutter_gym_app/models/feeling_model.dart';
-
 import 'package:flutter_gym_app/app_colors.dart';
+import 'package:flutter_gym_app/screens/screen_register_training.dart';
 
-class ScreeTraining extends StatelessWidget {
-  ScreeTraining({super.key});
+class ScreenTraining extends StatelessWidget {
+  ScreenTraining({super.key});
 
   final exerciseModel = ExerciseModel(
     id: "EX001",
@@ -51,9 +51,12 @@ class ScreeTraining extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          print("Foi clicado!");
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => ScreenRegisterTraining()),
+          );
         },
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
       ),
       body: Container(
         margin: EdgeInsets.all(8),
@@ -75,7 +78,7 @@ class ScreeTraining extends StatelessWidget {
                       backgroundColor: AppColors.primary,
                       foregroundColor: Colors.white,
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadiusGeometry.circular(16),
+                        borderRadius: BorderRadius.circular(16),
                       ),
                     ),
                     onPressed: () {},
