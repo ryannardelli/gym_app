@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gym_app/screens/screen_authentication.dart';
-// import 'package:flutter_gym_app/screens/screen_exercise.dart';
 
 void main() {
   runApp(const MyApp());
@@ -9,12 +8,26 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: ScreenAuthentication(),
+      theme: ThemeData(
+        inputDecorationTheme: InputDecorationTheme(
+          filled: true,
+          fillColor: Colors.black,
+          labelStyle: const TextStyle(color: Colors.white),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(12),
+            borderSide: const BorderSide(color: Colors.white),
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(12),
+            borderSide: const BorderSide(color: Colors.white70, width: 2),
+          ),
+        ),
+      ),
+      home: const ScreenAuthentication(),
     );
   }
 }
