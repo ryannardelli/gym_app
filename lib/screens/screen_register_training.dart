@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gym_app/app_colors.dart';
 
 class ScreenRegisterTraining extends StatelessWidget {
   ScreenRegisterTraining({super.key});
