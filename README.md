@@ -16,7 +16,7 @@ Aplicativo mobile de auxílio na academia, desenvolvido em **Flutter** como proj
 ---
 
 ## 📖 Descrição  
-O **ME Mobile** é um aplicativo mobile criado com **Flutter** para auxiliar alunos e instrutores de academias no gerenciamento de treinos e exercícios.  
+O **PowerGym** é um aplicativo mobile criado com **Flutter** para auxiliar alunos e instrutores de academias no gerenciamento de treinos e exercícios.  
 O projeto foi desenvolvido como protótipo acadêmico, mas possui potencial de aplicação prática, oferecendo uma plataforma intuitiva, responsiva e multiplataforma.  
 
 ---
