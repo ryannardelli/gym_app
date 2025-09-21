@@ -70,6 +70,12 @@ flutter run
 
 ### 📌 Conclusão
 
+<br>
+<p align="center">
+  <img src="https://media.tenor.com/Kp1EUreoiqAAAAAM/yes-yeah.gif" alt="GIF de demonstração">
+</p>
+<br>
+
 O desenvolvimento do aplicativo **ME Mobile** possibilitou colocar em prática conceitos de programação mobile com Flutter, incluindo telas de login, listagens, cadastros e navegação entre telas com dados mockados para simulação de um ambiente real.
 
 O aplicativo contribui para a organização dos treinos e exercícios, servindo como ferramenta de apoio para alunos e instrutores de academia. Além disso, demonstrou a importância de boas práticas de desenvolvimento, estruturação do código e uso de componentes essenciais do Flutter.
@@ -80,7 +86,8 @@ Por fim, o protótipo demonstra que soluções digitais podem modernizar process
 
 #### 🎬 Demonstração
 
-![GIF de demonstração](imagens/demo.gif)  
-
-*GIF ilustrando a navegação entre telas, cadastro de usuários e visualização de treinos no aplicativo.*
-
+<br>
+<p align="center">
+  <img src="assets/powergym.gif" alt="GIF" height="300">
+</p> 
+<br>
