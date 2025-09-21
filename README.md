@@ -11,9 +11,7 @@ Aplicativo mobile de auxílio na academia, desenvolvido em **Flutter** como proj
 - [Pré-requisitos](#-pré-requisitos)  
 - [Instalação e Execução](#-instalação-e-execução)  
 - [Estrutura do Projeto](#-estrutura-do-projeto)  
-- [Demonstração](#-demonstração)  
-- [Aprendizados](#-aprendizados)  
-- [Autores](#-autores)  
+- [Conlusão](#-conclusão)   
 
 ---
 
@@ -24,15 +22,18 @@ O projeto foi desenvolvido como protótipo acadêmico, mas possui potencial de a
 ---
 
 ## ⚙️ Funcionalidades  
-- Tela de **Login** (autenticação simples).  
-- Tela inicial / **Dashboard**.  
-- **Listagem de exercícios** organizados por categorias.  
-- **Listagem de treinos** com planos estruturados.  
-- **Cadastro de usuários** (nome, e-mail, senha etc.).  
-- **Cadastro de exercícios** (nome, categoria, séries, repetições).  
-- **Cadastro de treinos** (associação de exercícios a um plano).  
-- **Edição e exclusão** de registros.  
-- Navegação fluida entre telas utilizando `Navigator`.  
+
+- Tela de **Login**: autenticação simples com usuário e senha, garantindo acesso seguro ao sistema.  
+- Tela de **Cadastro**: registro de novos usuários, incluindo informações básicas.  
+- Tela inicial / **Dashboard**: visão geral das principais funcionalidades do aplicativo.  
+- **Listagem de exercícios**: exibição organizada por categorias, mostrando nome, séries e repetições.  
+- **Listagem de treinos**: planos de treino estruturados, permitindo rápida consulta e acompanhamento.
+- **Listagem de sentimentos**: acompanhamento do humor ou motivação do aluno durante o treino.
+- **Informações de perfil**: Informações do perfil do usuário autenticado.
+- **Estatísticas**:  
+  - **Informações do perfil**: dados e progresso do usuário.  
+- **Cadastro de exercícios**: adição de novos exercícios com detalhes como nome, categoria, séries e repetições.  
+- **Cadastro de treinos**: criação de planos de treino associando diferentes exercícios de forma estruturada.   
 
 ---
 
@@ -56,10 +57,10 @@ Antes de rodar o projeto, você precisa ter instalado:
 
 ```bash
 # Clone este repositório
-git clone https://github.com/seu-usuario/me-mobile.git
+git clone https://github.com/ryannardelli/gym_app.git
 
 # Acesse a pasta do projeto
-cd me-mobile
+cd gym_app
 
 # Instale as dependências
 flutter pub get
@@ -67,6 +68,10 @@ flutter pub get
 # Execute o aplicativo
 flutter run
 ```
+
+> **Observação:**  
+> Além de usar o terminal, você também pode abrir o projeto em uma IDE como **Visual Studio Code** ou **Android Studio** e executar o aplicativo diretamente por lá.  
+> Basta abrir a pasta do projeto, garantir que as extensões do Flutter/Dart estão instaladas e clicar em **Run** ou **Start Debugging**. Isso é útil para quem prefere interface gráfica em vez do terminal.
 
 ### 📌 Conclusão
 
@@ -76,7 +81,7 @@ flutter run
 </p>
 <br>
 
-O desenvolvimento do aplicativo **ME Mobile** possibilitou colocar em prática conceitos de programação mobile com Flutter, incluindo telas de login, listagens, cadastros e navegação entre telas com dados mockados para simulação de um ambiente real.
+O desenvolvimento do aplicativo **PowerGym** possibilitou colocar em prática conceitos de programação mobile com Flutter, incluindo telas de login, listagens, cadastros e navegação entre telas com dados mockados para simulação de um ambiente real.
 
 O aplicativo contribui para a organização dos treinos e exercícios, servindo como ferramenta de apoio para alunos e instrutores de academia. Além disso, demonstrou a importância de boas práticas de desenvolvimento, estruturação do código e uso de componentes essenciais do Flutter.
 
