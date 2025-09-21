@@ -9,8 +9,7 @@ Aplicativo mobile de auxílio na academia, desenvolvido em **Flutter** como proj
 - [Funcionalidades](#-funcionalidades)  
 - [Tecnologias Utilizadas](#-tecnologias-utilizadas)  
 - [Pré-requisitos](#-pré-requisitos)  
-- [Instalação e Execução](#-instalação-e-execução)  
-- [Estrutura do Projeto](#-estrutura-do-projeto)  
+- [Instalação e Execução](#-instalação-e-execução)   
 - [Conlusão](#-conclusão)   
 
 ---
