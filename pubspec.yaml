@@ -12,6 +12,7 @@ dependencies:
     sdk: flutter
 
   cupertino_icons: ^1.0.8
+  flutter_native_splash: ^2.4.6
 
 dev_dependencies:
   flutter_test:
@@ -19,9 +20,14 @@ dev_dependencies:
   flutter_lints: ^5.0.0
 
 flutter:
-
   uses-material-design: true
 
-  # To add assets to your application, add an assets section, like this:
   assets:
     - assets/
+
+flutter_native_splash:
+  color: "#D90404"          # Cor de fundo
+  image: assets/logo-app.png  # Caminho do logo
+  android: true
+  ios: true
+  web: false

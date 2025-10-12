@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gym_app/screens/screen_authentication.dart';
+import 'package:flutter_gym_app/screens/screen_splash.dart';
 
 void main() {
   runApp(const MyApp());
 }
-
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -28,7 +27,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: const ScreenAuthentication(),
+      home: const SplashScreen(),
     );
   }
 }
