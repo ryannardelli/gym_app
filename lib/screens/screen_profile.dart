@@ -36,8 +36,8 @@ class ScreenProfile extends StatelessWidget {
                     child: CircleAvatar(
                       radius: 50,
                       backgroundImage: AssetImage(
-                        "assets/avatar_placeholder.png",
-                      ), // coloque a foto do usuário
+                        "assets/person.jpg",
+                      ),
                     ),
                   ),
                   const SizedBox(height: 16),
@@ -47,7 +47,7 @@ class ScreenProfile extends StatelessWidget {
                     child: Column(
                       children: const [
                         Text(
-                          "Ryan Nardelli",
+                          "João Silva",
                           style: TextStyle(
                             fontSize: 22,
                             fontWeight: FontWeight.bold,
@@ -55,7 +55,7 @@ class ScreenProfile extends StatelessWidget {
                         ),
                         SizedBox(height: 4),
                         Text(
-                          "ryan@email.com",
+                          "joao@email.com",
                           style: TextStyle(fontSize: 16, color: Colors.grey),
                         ),
                       ],
