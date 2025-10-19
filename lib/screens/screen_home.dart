@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gym_app/app_colors.dart';
+import 'package:flutter_gym_app/screens/screen_about_app.dart';
 import 'package:flutter_gym_app/screens/screen_exercise.dart';
 import 'package:flutter_gym_app/screens/screen_feeling.dart';
 import 'package:flutter_gym_app/screens/screen_profile.dart';
@@ -44,6 +45,13 @@ class ScreenHome extends StatelessWidget {
         "color": Colors.yellow,
         "route": "/feelings",
       },
+
+      {
+        "title": "Informações",
+        "icon": Icons.info_outline,
+        "color": Colors.grey,
+        "route": "/about",
+      },
     ];
 
     return Scaffold(
@@ -78,6 +86,8 @@ class ScreenHome extends StatelessWidget {
                         ),
                       );
 
+                      break;
+
                     case "Exercicios":
                       Navigator.push(
                         context,
@@ -85,6 +95,8 @@ class ScreenHome extends StatelessWidget {
                           builder: (context) => ScreenExercise(),
                         ),
                       );
+
+                      break;
 
                     case "Perfil":
                       Navigator.push(
@@ -94,11 +106,15 @@ class ScreenHome extends StatelessWidget {
                         ),
                       );
 
+                      break;
+
                     case "Estatisticas":
                       Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => ScreenStats()),
                       );
+
+                      break;
 
                     case "Sentimentos":
                       Navigator.push(
@@ -107,6 +123,18 @@ class ScreenHome extends StatelessWidget {
                           builder: (context) => ScreenFeelings(),
                         ),
                       );
+
+                      break;
+
+                      case "Informações":
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => ScreenAboutApp(), // nova tela
+                          ),
+                        );
+                      break;
+
                   }
                 },
                 child: Container(
