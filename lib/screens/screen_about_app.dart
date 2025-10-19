@@ -6,7 +6,7 @@ class ScreenAboutApp extends StatelessWidget {
 
   final List<Map<String, String>> teamMembers = const [
     {
-      "name": "Ryan Nardelli",
+      "name": "Icaro Ryan Vieira Nardelli",
       "course": "Análise e Desenvolvimento de Sistemas",
       "period": "5º Período",
       "role": "Desenvolvedor",
@@ -15,7 +15,7 @@ class ScreenAboutApp extends StatelessWidget {
       "image": "assets/ryan_profile.jpg"
     },
     {
-      "name": "Victor Hugo",
+      "name": "Victor Hugo Andrade Viana De Sá",
       "course": "Análise e Desenvolvimento de Sistemas",
       "period": "5º Período",
       "role": "UX/UI Designer",
@@ -24,7 +24,7 @@ class ScreenAboutApp extends StatelessWidget {
       "image": "assets/victor_profile.jpg"
     },
     {
-      "name": "Gabriel Gois",
+      "name": "Gabriel Gois Dantas Gama",
       "course": "Análise e Desenvolvimento de Sistemas",
       "period": "5º Período",
       "role": "Documentador do Projeto",
@@ -34,7 +34,7 @@ class ScreenAboutApp extends StatelessWidget {
     },
 
    {
-      "name": "Carlos Eduardo",
+      "name": "Carlos Eduardo Santos Almeida",
       "course": "Análise e Desenvolvimento de Sistemas",
       "period": "5º Período",
       "role": "Analista de Requisitos",
